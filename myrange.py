@@ -13,16 +13,18 @@ def my_range(end , start =0, step=1):
     ------------
     l: list of sequenced numbers based on the step."""
     l=[]
-    if step >0:
-        if end < start:
+    if step >0:  # step -> positive increment
+        if end < start: # additional check to make sure the format is (less,greater,step increment)
             end = end+start
             start = end - start
             end = end - start
+            # swapping to make sure we have the proper format
+            # Reason for this is that in a function definition, we cannot define non default value after defining default value. 
         while start < end:
             l.append(start)
             start += step
         return l
-    else:
+    else: # step -> negetive increment or decrement value
         if end < start:
             print("Error: First parameter should be greater than the 2nd parameter")
         while end > start:
