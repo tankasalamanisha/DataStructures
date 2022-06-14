@@ -8,7 +8,7 @@ def gcd(m:int , n:int)->int:
     m, n -> input from user; type: int.
     Returns:
     -------------
-    mrcf -> most recent greates common divisor of m and n"""
+    gcd computed recursively using euclids algorithm"""
    #Assume  m>=n
     if  m<n : 
         (m,n) = (n,m)  #  simultaneous assignment
