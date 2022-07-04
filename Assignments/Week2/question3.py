@@ -1,8 +1,7 @@
-import sys
-
 def mystery(l):
-    l=l[1:]
-    return()
+  l[0:2] = l[3:5]
+  return()
 
-mylist = [7,11,13]
-print(mystery(mylist))
+list1 = [34,17,12,88,53,97,62]
+mystery(list1)
+print(list1)
