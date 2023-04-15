@@ -11,11 +11,13 @@ def expanding(l:list)->bool:
     """
     diff_list=[]
     for i in range(len(l)-1):
-        diff = l[i+1]- l[i]
+        diff = abs(l[i+1]- l[i])
         diff_list.append(diff)
     #Checking for a sorted list: ascending
-    is_sorted = all(a <= b for a, b in zip(diff_list, diff_list[1:]))
-
+    is_sorted= True
+    for i in range(1, len(diff_list)):
+        if diff_list[i] <= diff_list[i - 1]:
+            is_sorted= False
     return is_sorted
 
 if __name__ == "__main__":
