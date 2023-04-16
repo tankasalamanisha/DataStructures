@@ -21,4 +21,5 @@ def expanding(l:list)->bool:
     return is_sorted
 
 if __name__ == "__main__":
-    print(expanding(list(map(int,sys.argv[1]))))
+    my_list=sys.argv[1].split('[')[1].split(']')[0].split(',')
+    print(expanding(list(map(int,my_list))))
