@@ -30,5 +30,5 @@ if __name__ == "__main__":
     list_1 = list(map(int,sys.argv[1].split('[')[1].split(']')[0].split(',')))
     list_2 = list(map(int,sys.argv[2].split('[')[1].split(']')[0].split(',')))
 
-    C= merge(list_1, list_2)
-    print(C)
+    d= merge(list_1, list_2)
+    print(d)
