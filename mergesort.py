@@ -2,6 +2,16 @@ import sys
 from merge import *
 
 def mergesort(A,left,right):
+    """Function that impliments mergesort technique.
+    Worst case: O(nlog[n])
+    
+    Args:
+    A(list): List to be sorted
+    left : leftmost index
+    right: rightmost index
+    
+    Returns:
+    (list): Sorted list"""
     if right - left <=1: #Base case
         return A[left:right]
     if right - left >1:  # Recursive call
