@@ -1,12 +1,12 @@
 import sys
 
 def splitsum(l:list)->list:
-    """Function that removes duplicates and returns only last occurrences of elements in the list.
+    """Function that returns sum of [positve**2, negative**3] in the list.
     Args:
         l(list): input list containing numbers
 
     Returns:
-        list: list of de-duplicated elements.
+        list: [positive_sum**2, negative_sum**3].
     """
     split_sum_list= []
     pos_sum = 0
