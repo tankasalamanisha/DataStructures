@@ -1,6 +1,6 @@
 import sys
 
-def rotate(l:list)->bool:
+def rotate(l:list)->list:
     """Function to rotate the given matrix
 
     Args:

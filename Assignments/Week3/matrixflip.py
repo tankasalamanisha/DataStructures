@@ -1,6 +1,7 @@
 import sys
+import numpy as np
 
-def leftrotate(l:list)->list:
+def matrixflip(l:list, flip:str)->list:
     """Function to rotate the given matrix
 
     Args:
@@ -9,21 +10,17 @@ def leftrotate(l:list)->list:
     Returns:
         l_rotate: rotated list
     """
-    row, col = len(l[0]) , len(l[1])
-
+    flipped_matrix = l
+    if flip == 'h':
+        flipped_matrix=np.flip(flipped_matrix,axis=1)
+    elif flip == 'v':
+        flipped_matrix=np.flip(flipped_matrix,axis=0)
     
-    l_rotate = l
-    N= col
-    # with respect to main diagonal
-    anti_clock_rotated_mat = list(zip(*l))[::-1]
-    
-    anti_clock_rotated_mat=[list(l_) for l_ in anti_clock_rotated_mat]
-    
-    return anti_clock_rotated_mat
+    return flipped_matrix
 
 if __name__ == "__main__":
     matrix = sys.argv[1]
     matrix = [i.split('[[')[1] if '[[' in i else i.split(']]')[0] for i in matrix.split('],[')]
     matrix= [list(m.split(',')) for m in matrix]
     matrix= [list(map(int,i)) for i in matrix]
-    print(leftrotate(matrix))
+    print(matrixflip(matrix, sys.argv[2]))
