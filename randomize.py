@@ -21,4 +21,8 @@ if __name__ == "__main__":
     quicksort(randomize(l),0,len(l))
     with_randomization = time.time()
     print(f"Quicksort with randomization:{with_randomization-start_time}")
-    
+
+# Stability of sorting in quicksort: Doesn't hold. In applications like spreadsheet, this stability is important- swap operation doesn't hold the original order
+# In such cases mergesort is preferred as we can choose to carefully merge.  
+# Do not allow elements from right to overtake left.
+# Favour left list while breaking the ties.
