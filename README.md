@@ -1,5 +1,5 @@
 # DataStructures
-This repository will have data structure implimentations on Python language.
+This repository will have data structure implimentations in Python language.
 
 All executions are command-line executions, but could be imported for other functionalities as well.
 
