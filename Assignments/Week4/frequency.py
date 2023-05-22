@@ -16,17 +16,21 @@ def frequency(l:list)->tuple:
             freq_dict[ele]+=1
         else:
             freq_dict[ele] = 1
-    sorted_list = sorted(freq_dict, key=lambda k: freq_dict[k])
-    print(sorted_list)
-    min_value = sorted_list[0]
-    max_value = sorted_list[0]
-    for v_ in sorted_list:
-        if min_value > v_:
-            min_value = v_
-        if max_value < v_:
-            max_value = v_
+    print(freq_dict)
+    freq_dict_rev ={k:[] for k in freq_dict.values()}
+    for k_,v_ in freq_dict.items():
+        if not freq_dict_rev[v_]:
+            freq_dict_rev[v_] = [int(k_)]
+        else:
+            freq_dict_rev[v_].append(int(k_))
+    print(freq_dict_rev)
     
-    minmax = ([int(min_value)],[int(max_value)])
+    sorted_list = sorted(freq_dict_rev, key=lambda k: freq_dict_rev[k])
+    print(sorted_list)
+    min_value = sorted(freq_dict_rev[sorted_list[0]])
+    max_value = sorted(freq_dict_rev[sorted_list[-1]])
+    
+    minmax = (min_value,max_value)
     return minmax
 
 if __name__ == "__main__":
