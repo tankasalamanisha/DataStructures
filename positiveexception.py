@@ -10,4 +10,3 @@ def append_new_dict_element(my_dict,k_,v_):
 if __name__ == "__main__":
     new_dict = {"manisha":[20,30], "mohan":[50,60]}
     print(append_new_dict_element(new_dict, "Anand",50))
-
