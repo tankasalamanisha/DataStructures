@@ -37,3 +37,15 @@ resources={
     "water":200,
     "coffee": 100
 }
+
+def get_beverage(menu:dict)->str:
+    """Function to take in the beverage type entered by user.
+    Args:
+    ----------------------------
+    menu: <dictionary>: menu set by the operator.
+    Returns:
+    preferred_beverage: <str>: beverage selected by the user.
+    """
+    print(f"Beverage options:\n{menu.keys()}\n")
+    preferred_beverage = input("Enter the beverage you'd like to enjoy:")
+    return preferred_beverage
