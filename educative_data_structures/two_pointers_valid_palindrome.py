@@ -19,9 +19,10 @@ def is_palindrome(value:str)->bool:
     Time Complexity:
     The time complexity required for this is O(n) for a single iteration, where n-> size of the string. As two-pointers makes sure its traversal is tracked on
     both sides using a single iteration through zip function, the iteration length accounts for the time complexity.
+    Edit : added another condition: if start < end, so the time complexity now is o(n/2) as the for loop traverses only half way.
     """
-    for start, end in zip(range(0,len(value)), range(len(value)-1,0,-1)):
-        if value[start] != value[end]:
+    for start, end in zip(range(0,len(value)), range(len(value)-1,-1,-1)):
+        if (value[start] != value[end]) & (start < end):
             return False
     return True
 
