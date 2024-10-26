@@ -40,3 +40,20 @@ class LinkedList:
 
         new_node.next = prev_node.next
         prev_node.next = new_node
+    
+    def delete_node(self,key):
+        curr_node = self.head
+
+        if curr_node and curr_node.data == key:
+            self.head = curr_node.next
+            curr_node = None
+            return
+        
+        prev = None
+        while curr_node and curr_node.data != key:
+            prev = curr_node
+            curr_node = curr_node.next
+        if curr_node == None:
+            return
+        prev.next = curr_node.next
+        curr_node = None
